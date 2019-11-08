@@ -1,6 +1,8 @@
 # Binance Account Monitor - Python Implemetaoin
 
-This is a basic implementation of the binance.com / binance.us API.
+This is a basic implementation of the binance.com API. On running, it builds a local database of withdrawls and deposits, and begins listening for new withdraws, deposits, or changes to balance, on which it will alert to console with new data, and save the new data to its database.
+
+This is for a trading club that wishes to track their performance as well as the team's contributions to the club account.
 
 ## Intalling python-binance packages
 
