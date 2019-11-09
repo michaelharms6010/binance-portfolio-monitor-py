@@ -41,9 +41,7 @@ def job():
             outDeposits.write(str(i) + "\n")
 
     
-schedule.every(.2).seconds.do(job)
-schedule.every().hour.do(job)
-schedule.every().day.at("10:30").do(job)
+schedule.every(1).seconds.do(job)
 
 while 1:
     schedule.run_pending()
