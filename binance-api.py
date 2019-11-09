@@ -110,7 +110,7 @@ for i in res["depositList"]:
         print "Total portfolio contributions (BTC): ", currentTotalContributionsBTC
         print "Total portfolio contributions (USD): ", currentTotalContributionsUSD
         print "Current portfolio value: "
-        print
+        
         outputObj = {
             "token": token,
             "amount": newDepositAmount,
@@ -154,7 +154,7 @@ for i in withdrawRes["withdrawList"]:
 
         # Alert to console
 
-        print "***** New withdrawl detected *****"
+        print "\n ***** New withdrawl detected *****"
         print "Token Withdrawn:", token
         print "Amount: ",  newWithdrawAmount
         print "txid:", newTxid
@@ -167,6 +167,7 @@ for i in withdrawRes["withdrawList"]:
         print "Withdraw value (USD): ", newWithdrawValueUSD
         print "currentTotalContributions (BTC): ", currentTotalContributionsBTC
         print "currentTotalContributions (USD): ", currentTotalContributionsUSD
+        
         
         
         outputObj = {
