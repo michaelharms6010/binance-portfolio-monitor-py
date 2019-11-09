@@ -1,6 +1,6 @@
 # to do:
-# 1. update asset balance based on withdraws , calculate total portfolio value
-# 2. set up listening and displayed alerts for newly detected deposits/withdraws
+# 1. accurate asset balance monitor , calculate total portfolio value
+# 2. set up listening
 # 3. STRETCH: enable database for trade tracking
 
 
