@@ -4,9 +4,8 @@
 
 
 from binance.client import Client
-import json
+# import json
 import datetime
-import ccxt
 import ast
 import schedule
 import time
