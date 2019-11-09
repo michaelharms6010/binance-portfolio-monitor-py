@@ -91,19 +91,26 @@ for i in res["depositList"]:
         depositServerTime = i["insertTime"]
         formattedDepositTime = datetime.datetime.fromtimestamp(depositServerTime/1000)
         depositAddress = i["address"]
-        # print "***** New deposit detected *****"
-        # print "Token Deposited:", token
-        # print "Amount: ",  newDepositAmount
-        # print "txid:", newTxid
-        # print "Servertime of deposit: ",  depositServerTime
-        # print "Date/Time of deposit: ", formattedDepositTime
-        # print "Deposited to address: ",  depositAddress
-        # print "Current Exchange Rate (" + token  + "BTC):",  tokenExchangeRateBTC
-        # print "Current Exchange Rate (" + token  + "USD):", tokenExchangeRateUSD
-        # print "Deposit value (BTC): ", newDepositValueBTC
-        # print "Deposit value (USD): ", newDepositValueUSD
         currentTotalContributionsBTC += newDepositValueBTC
         currentTotalContributionsUSD += newDepositValueUSD
+
+        # Print a console alert when a new deposit comes in
+
+        print "\n ***** New deposit detected ***** "
+        print "Token Deposited:", token
+        print "Amount: ",  newDepositAmount
+        print "txid:", newTxid
+        print "Servertime of deposit: ",  depositServerTime
+        print "Date/Time of deposit: ", formattedDepositTime
+        print "Deposited to address: ",  depositAddress
+        print "Current Exchange Rate (" + token  + "BTC):",  tokenExchangeRateBTC
+        print "Current Exchange Rate (" + token  + "USD):", tokenExchangeRateUSD
+        print "Deposit value (BTC): ", newDepositValueBTC
+        print "Deposit value (USD): ", newDepositValueUSD
+        print "Total portfolio contributions (BTC): ", currentTotalContributionsBTC
+        print "Total portfolio contributions (USD): ", currentTotalContributionsUSD
+        print "Current portfolio value: "
+        print
         outputObj = {
             "token": token,
             "amount": newDepositAmount,
@@ -144,19 +151,24 @@ for i in withdrawRes["withdrawList"]:
         withdrawServerTime = i["applyTime"]
         formattedWithdrawTime = datetime.datetime.fromtimestamp(withdrawServerTime/1000)
         withdrawAddress = i["address"]
-        # print "***** New withdrawl detected *****"
-        # print "Token Withdrawn:", token
-        # print "Amount: ",  newWithdrawAmount
-        # print "txid:", newTxid
-        # print "Servertime of withdraw: ",  withdrawServerTime
-        # print "Date/Time of withdraw: ", formattedWithdrawTime
-        # print "Withdrawed to address: ",  withdrawAddress
-        # print "Current Exchange Rate (" + token  + "BTC):",  tokenExchangeRateBTC
-        # print "Current Exchange Rate (" + token  + "USD):", tokenExchangeRateUSD
-        # print "Withdraw value (BTC): ", newWithdrawValueBTC
-        # print "Withdraw value (USD): ", newWithdrawValueUSD
-        currentTotalContributionsBTC += newWithdrawValueBTC
-        currentTotalContributionsUSD += newWithdrawValueUSD
+
+        # Alert to console
+
+        print "***** New withdrawl detected *****"
+        print "Token Withdrawn:", token
+        print "Amount: ",  newWithdrawAmount
+        print "txid:", newTxid
+        print "Servertime of withdraw: ",  withdrawServerTime
+        print "Date/Time of withdraw: ", formattedWithdrawTime
+        print "Withdrawed to address: ",  withdrawAddress
+        print "Current Exchange Rate (" + token  + "BTC):",  tokenExchangeRateBTC
+        print "Current Exchange Rate (" + token  + "USD):", tokenExchangeRateUSD
+        print "Withdraw value (BTC): ", newWithdrawValueBTC
+        print "Withdraw value (USD): ", newWithdrawValueUSD
+        print "currentTotalContributions (BTC): ", currentTotalContributionsBTC
+        print "currentTotalContributions (USD): ", currentTotalContributionsUSD
+        
+        
         outputObj = {
             "token": token,
             "amount": newWithdrawAmount,
