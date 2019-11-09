@@ -52,24 +52,32 @@ print BTCUSD
 
 currentTotalContributionsBTC = 0.0000
 
+accountResponse = client.get_account()
+for i in accountResponse['balances']:
+    if float(i['free']):
+        if i['asset'] in accountHoldings.keys():
+            accountHoldings[i['asset']] += float(i["free"])
+        else:
+            accountHoldings[i['asset']] = float(i["free"])
+
+
 for i in savedDeposits:
-    if i['token'] in accountHoldings.keys():        
-        accountHoldings[i['token']] += i['amount']
-    else:
-        accountHoldings[i['token']] = i['amount']
+    # if i['token'] in accountHoldings.keys():        
+    #     accountHoldings[i['token']] += i['amount']
+    # else:
+    #     accountHoldings[i['token']] = i['amount']
         
     currentTotalContributionsBTC += i['depositValueBTC']
 
 currentTotalContributionsUSD = currentTotalContributionsBTC * BTCUSD
-
-print currentTotalContributionsBTC
-print currentTotalContributionsUSD
 
 outputObj = {}
 
 print accountHoldings
 
 res = client.get_deposit_history()
+
+
 
 for i in res["depositList"]:
     tokenExchangeRateBTC = 1.000

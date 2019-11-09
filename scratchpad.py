@@ -51,3 +51,5 @@
 #     "currentTotalContributionsBTC": 0,
 #     "currentTotalContributionsUSD": 0
 # }
+
+print 0.0000 == False
