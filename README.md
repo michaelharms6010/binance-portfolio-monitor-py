@@ -4,7 +4,7 @@ This is a basic implementation of the binance.com API. On running, it builds a l
 
 This is for a trading club that wishes to track their outcomes vs contributions to the club account.
 
-## Package Dependencies
+## Dependencies
 
     python -m pip install python-binance
     python -m pip install schedule
@@ -20,6 +20,10 @@ with your actual api values. Access token on line one, api secret on line two. D
 ### Script functionality:
 
 This script can be run by typing "python binance-api.py" in the terminal. When run, it will listen for new deposits or withdrawls. When one happens, the console will print an alert with new information, and save the deposit info to deposit-database.txt or withdraw-database.txt as appropriate.
+
+The script writes to file databases, but it's technically redundant to list processing. It allows for cleaner startup and easier debugging, but is not core to the functioality. Inasmuch as this project is made as a generic bootstrap to other's python binance API projects, the debug-friendly output files remain. Be warned that this will put the Binance account's history in plaintext on your drive. 
+
+Remvoing these db files is a potential future todo. You can expand functionality using the API functions listed here: https://python-binance.readthedocs.io/en/latest/account.html
 
 #### Contact:
 

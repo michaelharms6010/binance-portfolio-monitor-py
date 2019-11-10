@@ -1,10 +1,8 @@
 # to do:
-#  MVP : Build handling for unconfirmed, locked deposits
-#  STRETCH: enable database for trade tracking
+#  STRETCH: enable database & alerts for trade tracking
 
 
 from binance.client import Client
-# import json
 import datetime
 import ast
 import schedule
