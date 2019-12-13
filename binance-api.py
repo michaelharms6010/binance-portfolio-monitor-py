@@ -12,8 +12,8 @@ keyFile = open(".keys","r")
 
 binanceKey = keyFile.readline().rstrip("\n")
 binanceSecret = keyFile.readline().rstrip("\n")
-binanceUSKey = keyFile.readline().rstrip("\n")
-binanceUSSecret = keyFile.readline().rstrip("\n")
+# binanceUSKey = keyFile.readline().rstrip("\n")
+# binanceUSSecret = keyFile.readline().rstrip("\n")
 
 savedDeposits = []
 savedWithdraws = []
@@ -38,11 +38,11 @@ outDeposits = open("deposit-database.txt", "a")
 outWithdraws = open("withdraw-database.txt", "a")
 
 client = Client(binanceKey, binanceSecret)
-api = {
-    "apiKey": binanceKey,
-    "secret": binanceSecret,
-    "password": None,
-}
+# api = {
+#     "apiKey": binanceKey,
+#     "secret": binanceSecret,
+#     "password": None,
+# }
 
 print "******** STARTING BINANCE ACCOUNT LISTENER *********"
 
@@ -58,6 +58,7 @@ def job():
     #build object of token balances
 
     accountValueBTC = 0.000
+
 
     for i in accountResponse['balances']:
         if float(i['free']) or float(i['locked']):
